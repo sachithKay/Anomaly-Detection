@@ -1,0 +1,10 @@
+[service_group]
+name = "name goes here"
+
+[[services]]
+container_name = "happy_einstein"
+endpoint = "endpoint goes here"
+
+[[services]]
+container_name = "mysql5725"
+endpoint = "endpoint goes here"
