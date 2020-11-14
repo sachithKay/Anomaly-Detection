@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>Data-Collector</module>
+        <module>Microservices</module>
     </modules>
 
     <dependencyManagement>
@@ -34,7 +35,6 @@
                 <artifactId>gson</artifactId>
                 <version>2.8.6</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 
@@ -42,5 +42,34 @@
         <maven.jar.plugin.version>3.0.2</maven.jar.plugin.version>
     </properties>
 
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- plugin used to dockerize applications -->
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>dockerfile-maven-plugin</artifactId>
+                    <version>1.4.13</version>
+                    <executions>
+                        <execution>
+                            <id>default</id>
+                            <goals>
+                                <goal>build</goal>
+                                <goal>push</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <skipDockerInfo>true</skipDockerInfo>
+                        <repository>${project.artifactId}</repository>
+                        <tag>${project.version}</tag>
+                        <buildArgs>
+                            <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                        </buildArgs>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
