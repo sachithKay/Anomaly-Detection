@@ -5,7 +5,7 @@ import com.influxdb.client.InfluxDBClientFactory;
 import com.influxdb.client.WriteApi;
 import com.influxdb.client.domain.WritePrecision;
 import com.influxdb.client.write.Point;
-import org.msc.anomalydetection.metrics.core.DataCollectorExcpetion;
+import org.msc.anomalydetection.metrics.core.exception.DataCollectorExcpetion;
 import org.msc.anomalydetection.metrics.core.Metric;
 
 import java.util.ArrayList;

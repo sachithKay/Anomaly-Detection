@@ -1,4 +1,4 @@
-package org.msc.anomalydetection.metrics;
+package org.msc.anomalydetection.metrics.core;
 
 import java.util.Timer;
 

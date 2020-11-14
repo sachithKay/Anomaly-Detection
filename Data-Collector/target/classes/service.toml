@@ -1,5 +1,6 @@
 [service_group]
 name = "name goes here"
+metric_collection_rate = 10
 
 [[services]]
 container_name = "happy_einstein"

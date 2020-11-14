@@ -1,4 +1,4 @@
-package org.msc.anomalydetection.metrics.core;
+package org.msc.anomalydetection.metrics.core.exception;
 
 public class DataCollectorExcpetion extends RuntimeException {
 

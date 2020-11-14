@@ -24,7 +24,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>org.msc.anomalydetection.metrics.MetricHandler</mainClass>
+                                    <mainClass>org.msc.anomalydetection.metrics.core.MetricHandler</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>

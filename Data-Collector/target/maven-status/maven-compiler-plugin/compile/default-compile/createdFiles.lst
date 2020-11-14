@@ -1,9 +1,9 @@
 org/msc/anomalydetection/metrics/influx/InfluxDBHandler.class
+org/msc/anomalydetection/metrics/core/MetricHandler.class
 org/msc/anomalydetection/metrics/util/ServiceConfig.class
-org/msc/anomalydetection/metrics/MetricCollectorTask.class
 org/msc/anomalydetection/metrics/core/Metric.class
 org/msc/anomalydetection/metrics/core/MetricCollector.class
 org/msc/anomalydetection/metrics/system/SystemMetricCollector.class
-org/msc/anomalydetection/metrics/MetricHandler.class
+org/msc/anomalydetection/metrics/core/MetricCollectorTask.class
+org/msc/anomalydetection/metrics/core/exception/DataCollectorExcpetion.class
 org/msc/anomalydetection/metrics/application/ApplicationMetricCollector.class
-org/msc/anomalydetection/metrics/core/DataCollectorExcpetion.class

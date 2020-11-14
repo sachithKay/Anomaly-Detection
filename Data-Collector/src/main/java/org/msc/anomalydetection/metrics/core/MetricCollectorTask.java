@@ -1,4 +1,4 @@
-package org.msc.anomalydetection.metrics;
+package org.msc.anomalydetection.metrics.core;
 
 import com.moandjiezana.toml.Toml;
 import org.msc.anomalydetection.metrics.application.ApplicationMetricCollector;
