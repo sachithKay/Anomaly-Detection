@@ -1,11 +1,26 @@
 [service_group]
-name = "name goes here"
 metric_collection_rate = 10
+name = 'name goes here'
 
 [[services]]
-container_name = "happy_einstein"
-endpoint = "endpoint goes here"
+service_name = 'employee-service'
+container_name = 'happy_einstein'
+endpoint = 'http://localhost:8080/employees'
+
+[[services.resources]]
+path = '/getemployee'
+method = 'GET'
+
+[[services.resources]]
+path = '/setemployee'
+method = 'POST'
+payload = 'sampleJSON'
 
 [[services]]
-container_name = "mysql5725"
-endpoint = "endpoint goes here"
+service_name = 'salary-service'
+container_name = 'rando_container'
+endpoint = 'http://localhost:8080/salaries'
+
+[[services.resources]]
+path = '/getsalary/1432'
+method = 'GET'
