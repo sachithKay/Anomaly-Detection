@@ -4,23 +4,23 @@ name = 'name goes here'
 
 [[services]]
 service_name = 'employee-service'
-container_name = 'happy_einstein'
-endpoint = 'http://localhost:8080/employees'
+container_name = 'es1'
+endpoint = 'http://localhost:9000/employee-service'
 
 [[services.resources]]
-path = '/getemployee'
+path = '/getData'
 method = 'GET'
 
 [[services.resources]]
-path = '/setemployee'
-method = 'POST'
+path = '/index'
+method = 'GET'
 payload = 'sampleJSON'
 
 [[services]]
-service_name = 'salary-service'
-container_name = 'rando_container'
-endpoint = 'http://localhost:8080/salaries'
+service_name = 'another-employee-service'
+container_name = 'es2'
+endpoint = 'http://localhost:9100/employee-service'
 
 [[services.resources]]
-path = '/getsalary/1432'
+path = '/getData'
 method = 'GET'

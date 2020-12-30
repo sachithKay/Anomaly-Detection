@@ -2,8 +2,7 @@ package org.msc.anomalydetection.metrics.core;
 
 import com.moandjiezana.toml.Toml;
 import org.msc.anomalydetection.metrics.application.ApplicationMetricCollector;
-import org.msc.anomalydetection.metrics.core.Metric;
-import org.msc.anomalydetection.metrics.influx.InfluxDBHandler;
+import org.msc.anomalydetection.metrics.db.influx.InfluxDBHandler;
 import org.msc.anomalydetection.metrics.system.SystemMetricCollector;
 import org.msc.anomalydetection.metrics.util.ServiceConfig;
 
@@ -30,7 +29,7 @@ public class MetricCollectorTask extends TimerTask {
             metric.setTimeStamp(System.currentTimeMillis());
             applicationMetricCollector.newService(service).receive(metric);
             systemMetricCollector.newService(service).receive(metric);
-            dbHandler.writeMetric(metric);
+            dbHandler.writeMetricByResource(metric);
         }
     }
 }

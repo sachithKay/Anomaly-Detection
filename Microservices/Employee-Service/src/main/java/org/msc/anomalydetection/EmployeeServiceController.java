@@ -20,6 +20,11 @@ public class EmployeeServiceController {
 
         HashMap<String, Object> map = new HashMap();
         map.put("key1", "value1");
+        try {
+            Thread.sleep(30000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return map;
     }
 }

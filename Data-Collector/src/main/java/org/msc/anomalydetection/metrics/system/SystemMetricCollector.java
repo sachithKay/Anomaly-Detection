@@ -36,7 +36,7 @@ public class SystemMetricCollector implements MetricCollector {
 
                 String statArrayKey = null;
                 for (String key: keys) {
-                    // here we are only want the one and only element.
+                    // here we only want the one and only one element.
                     // hence no need to iterate
                     statArrayKey = key;
                     break;
@@ -48,7 +48,7 @@ public class SystemMetricCollector implements MetricCollector {
                 metric.setCpuUsage(getCpuUsage(statObject));
                 metric.setMemoryUsage(getMemoryUsage(statObject));
             } catch (IOException e) {
-                Log.error("Error parsing json response.");
+                Log.error("Error parsing json response.", e);
             }
         } else {
             Log.error("Response has not been initialized.");

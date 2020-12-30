@@ -26,6 +26,9 @@
                                 <manifest>
                                     <mainClass>org.msc.anomalydetection.metrics.core.MetricHandler</mainClass>
                                 </manifest>
+                                <manifestEntries>
+                                    <Class-Path>.</Class-Path>
+                                </manifestEntries>
                             </archive>
                             <descriptorRefs>
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
@@ -54,20 +57,19 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <useBaseVersion>false</useBaseVersion>
-                        </configuration>
-                    </execution>
-                </executions>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <outputDirectory>${project.build.directory}</outputDirectory>
+                    <resources>
+                        <resource>
+                            <directory>${basedir}/src/main/resources</directory>
+                            <includes>
+                                <include>**/*.*</include>
+                            </includes>
+                        </resource>
+                    </resources>
+                </configuration>
             </plugin>
         </plugins>
     </build>
